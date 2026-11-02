@@ -15,7 +15,7 @@ console.log("평균:", average);
 
 let max = ratings[0];
 let maxIndex = 0;
-
+let count = 0;
 for (let i = 0; i < ratings.length; i++){
     if (ratings[i] > max){
          max = ratings[i];
@@ -24,6 +24,29 @@ for (let i = 0; i < ratings.length; i++){
 }
 
 console.log("최고:", titles[maxIndex], max);
+if (ratings[i] >= 8) {
+    count++;
+}
+
+let label ="";
+if(ratings[i]>= 8.5){
+    label= "titles";
+}else if(ratings[i]>= 7.0){
+    label = "ratings";
+}else{
+    label = "years";
+}
+
+console.log(titles[i] + " (" + years[i] + ") : " + ratings[i] + " " + label);
+const avgText = average.toFixed(1);
+const best = titles[maxIndex];
+alert(`내 영화 ${titles.length}편, 평균 ${avgText}점, 최고는 ${best}`);
+
+
+
+console. log("최고:", titles[maxIndex], max);
+console.log("8점 이상:", count+"편");
+
 // document.write("외부 스크림트 방법");
 
 // console.log("여기 부분은 웹페이지 아니라 콘솔에 출력");
