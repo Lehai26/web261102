@@ -1,13 +1,29 @@
 // script.js : 내 영화 평점 통계(콘솔판)
 // 작성자 : 이름(학번)
-const titles = ["제목1", "제목2", "제목3", "제목4", "제목5"];
-const ratings = [8.4, 7.9, 9.0, 6.5, 8.1];
-const years = [2014, 2019, 1994, 2023, 2008];
+const titles = ["극장판 치이카와: 인어 섬의 비밀", "하트 오브 비스트", "수능, 출제의 비밀", "암살자(들)", "진격의 거인: 홍련의 화살"];
+const ratings = [7.6, 7.3, 7.0, 7.5, 8.1];
+const years = [2026, 2026, 2026, 2026, 2015];
 let sum = 0;
 for (let i = 0; i < ratings.length; i++) {
  sum = sum + ratings[i];
 }
 console.log("합계:", sum);
+
+
+const average = sum / ratings.length;
+console.log("평균:", average);
+
+let max = ratings[0];
+let maxIndex = 0;
+
+for (let i = 0; i < ratings.length; i++){
+    if (ratings[i] > max){
+         max = ratings[i];
+         maxIndex = i;
+    }
+}
+
+console.log("최고:", titles[maxIndex], max);
 // document.write("외부 스크림트 방법");
 
 // console.log("여기 부분은 웹페이지 아니라 콘솔에 출력");
